@@ -1,3 +1,4 @@
+import 'package:budgetmate_register/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:budgetmate_register/LoginPage.dart';
 
@@ -96,8 +97,10 @@ class _RegisterPageState extends State<RegisterPage>{
               const SizedBox(height: 8),
               TextButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context)=>LoginPage()));
+                  Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (context)=>LoginPage()),
+                        (Route<dynamic> route) => false,
+                  );
                 },
                 child: const Text(
                   'Already have an account? Login',
