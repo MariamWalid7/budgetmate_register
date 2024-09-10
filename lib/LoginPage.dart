@@ -1,3 +1,4 @@
+import 'package:budgetmate_register/HomeScreen.dart';
 import 'package:budgetmate_register/RegisterPage.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,9 @@ class _LoginPageState extends State<LoginPage>{
                     ),
                   ),
                   SizedBox(height: 350,),
-                  ElevatedButton(onPressed: (){},
+                  ElevatedButton(onPressed: (){
+
+                  },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF209D86),
                       padding: EdgeInsets.symmetric(vertical: 16),
@@ -77,8 +80,10 @@ class _LoginPageState extends State<LoginPage>{
                   ),
                   SizedBox(height:20),
                   TextButton(onPressed: (){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context)=>RegisterPage()));
+                    Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (context)=>RegisterPage()),
+                          (Route<dynamic> route) => false,
+                    );
                   },
                       child: Text("Don't have an account?, Sign Up" ,
                         style: TextStyle(
